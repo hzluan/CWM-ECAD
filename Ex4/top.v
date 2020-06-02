@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Exercise #4 
-// Student Name:
+// Student Name: Hongzhou Luan
 // Date: 
 //
 //  Description: In this exercise, you need to design an electronic dice, following
@@ -16,3 +16,20 @@
 //  You need to write the whole file.
 //////////////////////////////////////////////////////////////////////////////////
 
+module roll(clk, rst, button, throw)
+	input clk, 
+  input rst, 
+  input button;
+	output reg [2:0] throw;
+	
+	initial
+		throw = 3'd0;
+	
+	always @ (posedge clk or rst)
+    if (rst) 
+			throw = 3'd0;
+		else
+      if (button or &(~throw) or &throw)
+				throw <= throw + 1;
+		
+endmodule
