@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Exercise #3 
-// Student Name:
-// Date: 
+// Student Name:Hongzhou Luan
+// Date: 2/June
 //
 //  Description: In this exercise, you need to design an up / down counter, where 
 //  if the rst=1, the counter should be set to zero. If enable=0, the value
