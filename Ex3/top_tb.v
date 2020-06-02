@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Test bench for Exercise #3 - Up/Down counter
-// Student Name:
-// Date: 
+// Student Name:Hongzhou Luan
+// Date: 2/June
 //
 // Description: A testbench module to test Ex3 - counter
 // Guidance: start with simple tests of the module (how should it react to each 
@@ -12,17 +12,45 @@
 
 module top_tb(
     );
-    
-//Todo: Parameters
+parameter CLK_PERIOD = 10;
 
-//Todo: Regitsers and wires
+//Todo: Registers and wires
+reg clk,rst,enable,direction;
+wire [7:0] counter_out;
 
 //Todo: Clock generation
+initial begin
+clk= 1'b0;
+forever 
+#(CLK_PERIOD/2) clk=~clk;
+end
 
 //Todo: User logic
-    
-//Todo: Finish test, check for success
+initial begin
+rst = 1;
+enable = 0;
+direction = 1;
 
+enable = 1;
+direction = 1;
+
+direction = 1;
+
+direction = 0;
+    
+enable = 0;
+direction = 1;
+$display("counter_out=%h",counter_out);
+end
+
+//Todo: Finish test, check for success
+  initial begin
+        #50 
+        if (err==0)
+          $display("***TEST PASSED! :) ***");
+        $finish;
+      end
 //Todo: Instantiate counter module
- 
+counter my_counter(clk,rst,enable,direction,counter_out);
+
 endmodule 
