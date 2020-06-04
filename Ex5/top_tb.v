@@ -11,8 +11,8 @@ module top_tb();
   //parameters
 parameter CLK_Period = 10;
 
-  //reg
-reg clk, error, red, amber,green;
+reg clk, error;
+wire red, amber,green;
 
   //clock
 initial begin
