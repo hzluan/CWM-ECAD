@@ -19,7 +19,9 @@ create_fileset -constrset -quiet constraints
 #add_files -fileset constraints -norecurse ${project_constraints}
 #set_property is_enabled false [get_files ${project_constraints}]
 
-#Todo: Add your IP here
+create_ip-name mem-vendor Oxford -library UserIP-module_mem
+set_propertygenerate_synth_checkpointfalse [get_filesmycalledip.xci]
+reset_targetall [get_ipsmycalledip]
 
 read_verilog "top.v"
 read_verilog "top_tb.v"
